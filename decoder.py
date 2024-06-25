@@ -1,7 +1,7 @@
-import cv2
-from pyzbar.pyzbar import decode
+import cv2 # type: ignore 
+from pyzbar.pyzbar import decode # type: ignore
 import flet as ft
-import subprocess
+import subprocess   # noqa: F401
 
 
 def read_qr_code(image_path):
@@ -16,7 +16,7 @@ def read_qr_code(image_path):
 
 
 def main(page: ft.Page):
-    page.theme_mode = page.theme_mode.LIGHT
+    page.theme_mode = page.theme_mode.LIGHT # type: ignore
     page.window_width = 400
     page.window_height = 700
     def add_clicked(e):
@@ -29,16 +29,6 @@ def main(page: ft.Page):
     page.add(new_task, ft.FloatingActionButton(icon=ft.icons.ADD, on_click=add_clicked))
 
 
-# if __name__ == '__main__':
-#     # image_path = 'test.png'  # Replace with your image file path
-#     # read_qr_code(image_path)
-#     # ft.app(target=main)
+if __name__ == '__main__':
+    ft.app(target=main)
 
-try:
-    retcode = subprocess.call("open " + filename, shell=True)
-    if retcode < 0:
-        print >>sys.stderr, "Child was terminated by signal", -retcode
-    else:
-        print >>sys.stderr, "Child returned", retcode
-except OSError, e:
-    print >>sys.stderr, "Execution failed:", e
