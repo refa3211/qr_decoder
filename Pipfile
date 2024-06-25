@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flet = "*"
+qrcode = "*"
+qrtools = "*"
+pyqrcode = "*"
+qreader = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
